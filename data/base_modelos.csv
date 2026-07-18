@@ -1,0 +1,26 @@
+﻿Modelo,Família,Motorização/Referência,Segmento,Grupos permitidos,Observação,Tolerância km,Fonte
+6.170,Delivery,F1C 3.0,Leve,Rodoviário;Misto;Severo;Especial,Express / 6.170,,Intervalos
+9.180,Delivery,Cummins ISF 3.8,Leve,Rodoviário;Misto;Severo;Especial,Delivery 9/11/13/14.180,,AT 004/23 / Intervalos
+11.180,Delivery,Cummins ISF 3.8,Leve,Rodoviário;Misto;Severo;Especial,Delivery 9/11/13/14.180,,AT 004/23 / Intervalos
+11.180 4x4,Delivery,Cummins ISF 3.8,Leve,Severo;Especial,Tendência severa/especial conforme aplicação 4x4,,Intervalos
+13.180 6x2,Delivery,Cummins ISF 3.8,Leve,Rodoviário;Misto;Severo;Especial,Delivery 13.180 6x2,,Intervalos
+14.180 6x2,Delivery,Cummins ISF 3.8,Leve,Rodoviário;Misto;Severo;Especial,Delivery 14.180 6x2,,Intervalos
+14.210,Constellation,MAN D08 4 Cilindros,Médio/Pesado,Rodoviário;Misto;Severo;Especial,Aplicar regra Constellation D08/Cummins,,Divisão por grupos / Intervalos
+17.210,Constellation,MAN D08 4 Cilindros,Médio/Pesado,Rodoviário;Misto;Severo;Especial,Aplicar regra Constellation D08/Cummins,,Divisão por grupos / Intervalos
+18.260,Constellation,MAN D08 6 Cilindros,Médio/Pesado,Rodoviário;Misto;Severo;Especial,Aplicar regra Constellation D08/Cummins,,Divisão por grupos / Intervalos
+18.320,Constellation,MAN D08 6 Cilindros,Pesado,Rodoviário;Misto;Severo;Especial,Aplicar regra Constellation D08/Cummins,,Divisão por grupos / Intervalos
+19.380,Constellation,Cummins L9,Pesado,Rodoviário;Misto;Severo;Especial,Família 19/25.380,3000,AT 004/23 / Intervalos
+20.480,Constellation,MAN D2676,Extrapesado,Rodoviário;Misto;Severo;Especial,Família 20/25/33.480,3000,AT 004/23 / Intervalos
+25.380,Constellation,Cummins L9,Pesado,Rodoviário;Misto;Severo;Especial,Família 19/25.380,3000,Intervalos
+25.480,Constellation,MAN D2676,Extrapesado,Rodoviário;Misto;Severo;Especial,Família 20/25/33.480,3000,AT 004/23 / Intervalos
+26.260,Constellation,MAN D08 6 Cilindros,Pesado,Rodoviário;Misto;Severo;Especial,Aplicar regra Constellation D08/Cummins,,Divisão por grupos / Intervalos
+26.320,Constellation,MAN D08 6 Cilindros,Pesado,Rodoviário;Misto;Severo;Especial,Aplicar regra Constellation D08/Cummins,,Divisão por grupos / Intervalos
+27.260,Constellation,MAN D08 6 Cilindros,Pesado,Rodoviário;Misto;Severo;Especial,Família 27/31,,Intervalos
+27.320,Constellation,MAN D08 6 Cilindros,Pesado,Rodoviário;Misto;Severo;Especial,Família 27/31,,Intervalos
+28.480,Meteor,MAN D2676,Extrapesado,Rodoviário;Misto;Severo;Especial,Meteor 28.480,3000,AT 004/23 / Intervalos
+29.530,Meteor,MAN D2676,Extrapesado,Rodoviário;Misto;Severo;Especial,Meteor 29.530,3000,AT 004/23 / Intervalos
+30.320,Constellation,MAN D08 6 Cilindros,Pesado,Rodoviário;Misto;Severo;Especial,Família 30.320,,Incluído conforme solicitação
+31.320,Constellation,MAN D08 6 Cilindros,Pesado,Rodoviário;Misto;Severo;Especial,Família 27/31,,AT 004/23 Exemplo terraplanagem
+32.380,Constellation,Cummins L9,Pesado,Rodoviário;Misto;Severo;Especial,Família 32.380,,Intervalos
+33.480,Constellation,MAN D2676,Extrapesado,Severo;Especial,Restrição: aplicar apenas Grupo III ou IV,3000,Intervalos
+Express,Delivery,F1C 3.0,Leve,Rodoviário;Misto;Severo;Especial,Express / Express+,,AT 004/23 / Intervalos

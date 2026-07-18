@@ -1,0 +1,87 @@
+﻿Implemento,Score,Tendência,Grupo mínimo sugerido,Base do peso,Observação
+ABERTA / CARROCERIA ABERTA,3,Baixo,Sem mínimo,Sem PTO/hidráulico,Carroceria simples; peso depende da rota/carga.
+AMBULANCIA,5,Baixo/Moderado,Sem mínimo,Sem PTO principal,"Operação especial, mas geralmente sem hidráulico severo."
+BAU / FURGÃO ALUMÍNIO / FURGÃO ISOTÉRMICO,0,Baixo,Sem mínimo,Sem PTO/hidráulico,Implemento leve; severidade vem da rota/operação.
+BETONEIRA,18,Muito alto,Severo,PTO/hidráulico e baixa velocidade,"Operação de obra, mistura e marcha lenta."
+BICAÇAMBA,15,Alto,Severo,Hidráulico + alta carga,"Carga, obra e maior severidade operacional."
+BITREM / BI-TREM,8,Moderado,Sem mínimo,Alto CMT sem PTO principal,"Composição aumenta esforço, mas não implica PTO."
+BOB TAIL,5,Baixo/Moderado,Sem mínimo,Sem PTO principal,Validar operação e carga.
+BOIADEIRO / GAIOLA ANIMAIS,8,Moderado,Misto,Carga viva e rotas variáveis,Operação sensível; severidade depende de rota.
+BOMBA,18,Muito alto,Severo,PTO/bomba,Possível operação parada e baixa velocidade.
+BOMBA DE CONCRETO,20,Muito alto,Severo,PTO/hidráulico intenso,Operação estacionária e obra.
+BOMBEIRO AUTOBOMBA SOCORRO,20,Muito alto,Severo,PTO/bomba,Operação crítica e estacionária.
+BORRACHEIRO / OFICINA VOLANTE,10,Moderado,Misto,Equipamentos auxiliares,Atendimento externo e possível motor parado.
+BRUCK,5,Baixo/Moderado,Sem mínimo,Sem PTO principal,Validar operação.
+BÁSCULA / BASCULANTE / CAÇAMBA,12,Alto,Severo,Hidráulico intermitente,"Obra, descarga hidráulica e possível fora de estrada."
+CABINE DE PASSAGEIROS,0,Baixo,Sem mínimo,Sem PTO/hidráulico,Sem influência severa direta.
+CABINE DE PASSAGEIROS + CARGA SECA,3,Baixo,Sem mínimo,Sem PTO/hidráulico,Pequeno acréscimo por uso misto.
+CABINE SUPLEMENTAR,0,Baixo,Sem mínimo,Sem PTO/hidráulico,Sem influência severa direta.
+CANAVIEIRO,12,Alto,Severo,Alta carga/CMT,Fora de estrada e safra elevam severidade.
+CANAVIEIRO + REBOQUE,15,Alto,Severo,Alta carga/CMT,Composição aumenta severidade.
+CARGA SECA,0,Baixo,Sem mínimo,Sem PTO/hidráulico,Baixa influência do implemento.
+CARGA SECA + PLATAFORMA ELEVATÓRIA,18,Muito alto,Severo,Hidráulico/plataforma,Uso de plataforma eleva score.
+CARRETA / SEMIRREBOQUE,6,Baixo/Moderado,Sem mínimo,Sem PTO principal,Composição e CMT moderados.
+CARRO FORTE,8,Moderado,Misto,Operação urbana/sensível,Paradas e uso urbano.
+CAVALO MECÂNICO,0,Baixo,Sem mínimo,Sem implemento direto,Implemento acoplado deve ser avaliado separadamente.
+CAVALO MECÂNICO 8X2,0,Baixo,Sem mínimo,Sem implemento direto,Implemento acoplado deve ser avaliado separadamente.
+CAÇAMBA DE MARAVALHA,12,Alto,Severo,Hidráulico/obra,Validar poeira e fora de estrada.
+CAÇAMBA ROLL ON ROLL OFF,18,Muito alto,Severo,PTO/hidráulico intenso,Operação hidráulica frequente.
+CEGONHA / TRANSPORTE DE VEÍCULOS,5,Baixo/Moderado,Sem mínimo,Sem PTO principal,Geralmente rodoviário; validar km mensal.
+CESTA AÉREA / CESTO AÉREO,18,Muito alto,Severo,PTO/hidráulico e motor parado,Operação estacionária e hidráulica.
+COLETOR DE LIXO / COMPACTADOR DE LIXO,20,Muito alto,Severo,PTO/hidráulico intenso,"Paradas, baixa velocidade e compactação."
+COMBOIO LUBRIFICANTE,15,Alto,Severo,Bomba/PTO possível,"Apoio em campo, baixa velocidade."
+COMPRESSOR,15,Alto,Severo,PTO/equipamento auxiliar,Pode exigir motor em regime parado.
+CONSULTORIO DENTARIO,15,Alto,Misto/Severo,Equipamentos auxiliares,Operação parada e baixa quilometragem.
+CONTAINER / SHELTER CONTAINER,5,Baixo/Moderado,Sem mínimo,Sem PTO principal,Depende da rota e peso.
+DEMARCADOR DE FAIXA,18,Muito alto,Severo,Baixa velocidade/equipamento,Operação lenta e estacionária.
+DISTRIBUIDOR DE CALCÁRIO,18,Muito alto,Severo,PTO/equipamento e poeira,Operação agrícola/severa.
+DISTRIBUIDOR DE GRÃOS,8,Moderado,Misto,Carga e sazonalidade,Validar rota e poeira.
+ESPARGIDOR / ESPARGIDOR DE ASFALTO,20,Muito alto,Severo,PTO/equipamento e baixa velocidade,Operação severa de obra.
+FRIGORÍFICO / FURGÃO FRIGORÍFICO,8,Moderado,Misto,Carga crítica/refrigerada,Peso vem mais da aplicação do que do implemento.
+FURGÃO OFICINA,10,Moderado,Misto,Equipamentos auxiliares,Atendimento externo.
+GAIOLA PARA BOTIJÕES,8,Moderado,Misto,Carga sensível e distribuição,Rotas urbanas e paradas.
+GRANELEIRO,6,Moderado,Sem mínimo,Carga/CMT,Depende da rota e peso.
+GUINCHO,12,Alto,Misto/Severo,Hidráulico eventual,Atendimento externo e operação parada.
+GUINCHO LANÇA,18,Muito alto,Severo,Hidráulico/PTO,Operação parada e levantamento.
+GUINCHO PLATAFORMA,12,Alto,Misto/Severo,Hidráulico eventual,Operação de socorro e plataforma.
+GUINDASTE,18,Muito alto,Severo,PTO/hidráulico intenso,Operação estacionária.
+HIDROJATO,20,Muito alto,Severo,PTO/bomba,Operação estacionária e baixa velocidade.
+HIDROSUCÇÃO / HIDROVÁCUO,20,Muito alto,Severo,PTO/bomba/vácuo,Operação estacionária severa.
+KIT FERROVIÁRIO,15,Alto,Severo,Operação especializada,Validar baixa velocidade e esforço.
+MADEIREIRO / TRANSPORTE DE TORAS,12,Alto,Severo,Alta carga/CMT,Fora de estrada e carga severa.
+MUNCK,18,Muito alto,Severo,PTO/hidráulico,Operação parado com carga.
+MUNCK + CARGA SECA,18,Muito alto,Severo,PTO/hidráulico,Uso combinado.
+MUNCK + GRANELEIRO,18,Muito alto,Severo,PTO/hidráulico,Uso combinado.
+MUNCK + PLATAFORMA,20,Muito alto,Severo,PTO/hidráulico intenso,Uso combinado severo.
+OUTROS / VALIDAR,0,Validar,Não enquadrar,Não informado,Não usar implemento desconhecido para sugerir grupo.
+PERFURATRIZ / PERFURATRIZ DE SOLO,20,Muito alto,Severo,PTO/equipamento estacionário,Operação severa.
+PINTURA VIÁRIA,18,Muito alto,Severo,Baixa velocidade/equipamento,Operação lenta e urbana.
+PLATAFORMA / PLATAFORMA PLANA,10,Moderado,Misto,Estrutural/possível hidráulico,Validar tipo de plataforma.
+POLIGUINDASTE,18,Muito alto,Severo,PTO/hidráulico intenso,Paradas e operação hidráulica.
+PRANCHA,10,Moderado,Misto,Alta carga estrutural,"Não implica PTO, mas aumenta esforço."
+REBOQUE,5,Baixo/Moderado,Sem mínimo,Composição,Depende da carga e rota.
+RODO TREM CACAMBA / RODOCAÇAMBA,15,Alto,Severo,Hidráulico + alto CMT,"Carga, composição, obra e descarga."
+ROLL ON ROLL OFF,18,Muito alto,Severo,PTO/hidráulico intenso,Operação hidráulica.
+SEM CARROCERIA / SEM IMPLEMENTO,0,Neutro,Sem mínimo,Não informado,Não influencia classificação.
+SEMI-AUTÔNOMO / TRANSBORDO DE CANA,15,Alto,Severo,Alta carga/CMT,Operação canavieira.
+SIDER,3,Baixo,Sem mínimo,Sem PTO/hidráulico,Depende de rota/carga.
+SILO,8,Moderado,Misto,Carga específica,Validar descarga e operação.
+SILO GRANELEIRO / CEBOLÃO,8,Moderado,Misto,Carga específica,Validar rota e poeira.
+SILO MISTURADOR,18,Muito alto,Severo,Mistura/equipamento,Maior severidade.
+TANQUE,8,Moderado,Misto,Carga líquida,Validar operação e rota.
+TANQUE + REBOQUE,10,Moderado,Misto,Carga líquida + composição,Carga e CMT.
+TANQUE ISOTÉRMICO,8,Moderado,Misto,Carga crítica,Validar aplicação.
+TRANSBORDO DE CANA,15,Alto,Severo,Alta carga/CMT,Operação agrícola severa.
+TRANSPORTE DE BEBIDAS,5,Baixo/Moderado,Sem mínimo,Sem PTO principal,Paradas vêm da aplicação.
+TRANSPORTE DE CONTAINER,5,Baixo/Moderado,Sem mínimo,Sem PTO principal,Peso/rota determinam severidade.
+TRANSPORTE DE CONTAINER + MUNCK,18,Muito alto,Severo,PTO/hidráulico,Munck eleva severidade.
+TRANSPORTE DE GASES,8,Moderado,Misto,Carga sensível,Validar distribuição e rota.
+TRANSPORTE DE TROPA,8,Moderado,Misto,Carga viva,Validar rota.
+TRANSPORTE DE VALORES,8,Moderado,Misto,Operação urbana/sensível,Paradas e rota urbana.
+TRANSPORTE DE VEÍCULOS,5,Baixo/Moderado,Sem mínimo,Sem PTO principal,Geralmente rodoviário.
+TRI TREM / TRITREM,8,Moderado,Misto,Alto CMT,Sem PTO principal.
+TRIO ELÉTRICO,15,Alto,Severo,Equipamentos e operação lenta,Pode ter baixa velocidade.
+VAGÃO FORRAGEIRO,12,Alto,Severo,Agrícola/carga,Validar fora de estrada.
+VALETADEIRA,20,Muito alto,Severo,PTO/equipamento severo,Operação estacionária/baixa velocidade.
+VARREDEIRA DE RUAS,20,Muito alto,Severo,PTO e baixa velocidade,Operação urbana severa.
+VITAL AIR - OXIGÊNIO,8,Moderado,Misto,Carga sensível,Validar distribuição.

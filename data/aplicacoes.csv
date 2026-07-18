@@ -1,0 +1,41 @@
+﻿Aplicação,Grupo base,Tendência fabricante,Score,Alerta / Justificativa
+TRANSPORTE E DISTRIBUIÇÃO DE BEBIDAS,Misto,Misto,8,Distribuição de bebidas: paradas e operação urbana/mista.
+AUTO BOMBA PARA CONCRETO,Especial,Especial,20,"Bomba/PTO, obra, baixa velocidade e operação estacionária."
+AUTO SOCORRO,Misto,Misto,8,Atendimento externo e possível uso de guincho/plataforma.
+CANA DE ACUCAR E ALCOOL,Severo,Severo/Especial,18,"Safra, alto CMT, carga e trechos fora de estrada."
+CARGA FRACIONADA,Misto,Misto,8,Distribuição com paradas e variação de rota.
+CARRO FORTE,Misto,Misto,8,Operação urbana/mista com paradas e janelas operacionais.
+COLETA DE ESGOTO,Especial,Especial,20,Operação de saneamento com bomba/PTO e baixa velocidade.
+COLETA DE LIXO,Especial,Especial,20,"Paradas constantes, compactação e baixa velocidade."
+CONCRETO,Severo,Severo/Especial,18,"Obra, hidráulico/PTO e baixa velocidade."
+DISTRIBUICAO DE BEBIDAS,Misto,Misto,8,"Distribuição, paradas e possível carga elevada."
+DIVERSOS,Não enquadrar,Operação desconhecida,0,Não sugerir grupo sem identificar a aplicação real.
+ELETRIFICACAO,Severo,Severo/Especial,18,"Operação com equipamentos, possível PTO/hidráulico e veículo parado."
+EQUIPAMENTOS HOSPITALARES,Misto,Rodoviário/Misto,5,Normalmente baixa severidade; validar rota e implemento.
+LOCACAO DE VEICULOS,Não enquadrar,Validar aplicação real,0,Locação não define aplicação; levantar uso real do locatário.
+MATERIAL DE CONSTRUCAO,Severo,Severo,15,"Carga, obra, poeira e possível fora de estrada."
+MINERACAO,Especial,Especial,20,"Condição extrema de carga, solo, poeira e esforço."
+OFICINA VOLANTE,Misto,Misto/Severo,10,Atendimento externo e possível uso estacionário.
+OPERACAO PORTUARIA,Severo,Severo/Especial,18,"Baixa velocidade, manobras e operação severa."
+PRODUTOS AGROPECUARIOS,Misto,Rodoviário/Misto,5,"Validar rota, sazonalidade e piso."
+PRODUTOS ALIMENTICIOS,Misto,Rodoviário/Misto,5,"Operação geralmente leve/mista, conforme distribuição."
+PRODUTOS CONGELADOS,Severo,Severo,15,Operação refrigerada/congelada com maior criticidade e janelas de entrega.
+PRODUTOS QUIMICOS,Misto,Misto,8,Carga sensível; validar tanque/implemento e rota.
+TERRAPLENAGEM,Severo,Severo/Especial,18,"Obra, fora de estrada, carga e baixa velocidade."
+TRANSP. OU LOC. DE AUTOMOVEIS,Rodoviário,Rodoviário,0,"Transporte de veículos tende a baixa severidade, salvo km mensal baixo pelo plano."
+TRANSPORTE CARGA SECA,Rodoviário,Rodoviário,0,Operação leve se pavimentada e com poucas paradas.
+TRANSPORTE DE ACO,Misto,Misto,8,Carga estrutural elevada; validar rota e implemento.
+TRANSPORTE DE ANIMAIS,Misto,Misto,8,Operação sensível com paradas/rota variáveis.
+TRANSPORTE DE CAL,Severo,Severo,15,"Poeira, carga e potencial ambiente severo."
+TRANSPORTE DE CILINDRO DE GAS,Misto,Misto,8,Carga sensível; validar distribuição e implemento.
+TRANSPORTE DE COMBUSTIVEL,Misto,Misto,8,Tanque/carga líquida; validar rota e peso.
+TRANSPORTE DE CONTAINERS,Misto,Misto,8,Carga e operação portuária/rodoviária mista.
+TRANSPORTE DE EQUIP. E PESSOAL,Misto,Misto/Severo,10,Operação de apoio com rota e paradas variáveis.
+TRANSPORTE DE FRUTAS,Misto,Rodoviário/Misto,5,Carga sensível; validar distribuição e refrigeração.
+TRANSPORTE DE GAS,Misto,Misto,8,Carga sensível; validar tanque/gaiola e rota.
+TRANSPORTE DE LATICINIOS,Severo,Severo,15,"Carga refrigerada e crítica, com janelas e distribuição."
+TRANSPORTE DE MADEIRA,Severo,Severo/Especial,18,"Alto CMT, estrada ruim e carga severa."
+TRANSPORTE DE MOVEIS,Rodoviário,Rodoviário,0,Carga de baixo peso específico; validar distribuição urbana.
+TRANSPORTE DE OLEO,Misto,Misto,8,Tanque/carga líquida; validar rota e operação.
+TRANSPORTE DE PASSAGEIROS,Misto,Rodoviário/Misto,5,Fora do foco de caminhões; validar se aplicável.
+TRANSPORTE DE VIDROS,Misto,Rodoviário/Misto,5,Carga sensível; validar rota e implemento.

@@ -1,0 +1,101 @@
+﻿Chave,Modelo,Família,Grupo,Intervalo km,Intervalo horas,Tolerância km
+6.170|Rodoviário,6.170,Delivery,Rodoviário,30000,,
+6.170|Misto,6.170,Delivery,Misto,20000,,
+6.170|Severo,6.170,Delivery,Severo,20000,,
+6.170|Especial,6.170,Delivery,Especial,,500,
+9.180|Rodoviário,9.180,Delivery,Rodoviário,40000,,
+9.180|Misto,9.180,Delivery,Misto,30000,,
+9.180|Severo,9.180,Delivery,Severo,20000,,
+9.180|Especial,9.180,Delivery,Especial,,500,
+11.180|Rodoviário,11.180,Delivery,Rodoviário,40000,,
+11.180 4x4|Rodoviário,11.180 4x4,Delivery,Rodoviário,40000,,
+11.180|Misto,11.180,Delivery,Misto,30000,,
+11.180 4x4|Misto,11.180 4x4,Delivery,Misto,30000,,
+11.180|Severo,11.180,Delivery,Severo,20000,,
+11.180 4x4|Severo,11.180 4x4,Delivery,Severo,20000,,
+11.180|Especial,11.180,Delivery,Especial,,500,
+11.180 4x4|Especial,11.180 4x4,Delivery,Especial,,500,
+13.180 6x2|Rodoviário,13.180 6x2,Delivery,Rodoviário,40000,,
+13.180 6x2|Misto,13.180 6x2,Delivery,Misto,30000,,
+13.180 6x2|Severo,13.180 6x2,Delivery,Severo,20000,,
+13.180 6x2|Especial,13.180 6x2,Delivery,Especial,,500,
+14.180 6x2|Rodoviário,14.180 6x2,Delivery,Rodoviário,40000,,
+14.180 6x2|Misto,14.180 6x2,Delivery,Misto,30000,,
+14.180 6x2|Severo,14.180 6x2,Delivery,Severo,20000,,
+14.180 6x2|Especial,14.180 6x2,Delivery,Especial,,500,
+14.210|Rodoviário,14.210,Constellation,Rodoviário,50000,,
+14.210|Misto,14.210,Constellation,Misto,40000,,
+14.210|Severo,14.210,Constellation,Severo,20000,,
+14.210|Especial,14.210,Constellation,Especial,,600,
+17.210|Rodoviário,17.210,Constellation,Rodoviário,50000,,
+17.210|Misto,17.210,Constellation,Misto,40000,,
+17.210|Severo,17.210,Constellation,Severo,20000,,
+17.210|Especial,17.210,Constellation,Especial,,600,
+18.260|Rodoviário,18.260,Constellation,Rodoviário,50000,,
+18.260|Misto,18.260,Constellation,Misto,40000,,
+18.260|Severo,18.260,Constellation,Severo,20000,,
+18.260|Especial,18.260,Constellation,Especial,,600,
+18.320|Rodoviário,18.320,Constellation,Rodoviário,50000,,
+18.320|Misto,18.320,Constellation,Misto,40000,,
+18.320|Severo,18.320,Constellation,Severo,20000,,
+18.320|Especial,18.320,Constellation,Especial,,600,
+19.380|Rodoviário,19.380,Constellation,Rodoviário,40000,,3000
+19.380|Misto,19.380,Constellation,Misto,30000,,3000
+19.380|Severo,19.380,Constellation,Severo,20000,,3000
+19.380|Especial,19.380,Constellation,Especial,,600,
+20.480|Rodoviário,20.480,Constellation,Rodoviário,50000,,3000
+20.480|Misto,20.480,Constellation,Misto,40000,,3000
+20.480|Severo,20.480,Constellation,Severo,20000,,3000
+20.480|Especial,20.480,Constellation,Especial,,600,
+25.380|Rodoviário,25.380,Constellation,Rodoviário,40000,,3000
+25.380|Misto,25.380,Constellation,Misto,30000,,3000
+25.380|Severo,25.380,Constellation,Severo,20000,,3000
+25.380|Especial,25.380,Constellation,Especial,,600,
+25.480|Rodoviário,25.480,Constellation,Rodoviário,50000,,3000
+25.480|Misto,25.480,Constellation,Misto,40000,,3000
+25.480|Severo,25.480,Constellation,Severo,20000,,3000
+25.480|Especial,25.480,Constellation,Especial,,600,
+26.260|Rodoviário,26.260,Constellation,Rodoviário,50000,,
+26.260|Misto,26.260,Constellation,Misto,40000,,
+26.260|Severo,26.260,Constellation,Severo,20000,,
+26.260|Especial,26.260,Constellation,Especial,,600,
+26.320|Rodoviário,26.320,Constellation,Rodoviário,50000,,
+26.320|Misto,26.320,Constellation,Misto,40000,,
+26.320|Severo,26.320,Constellation,Severo,20000,,
+26.320|Especial,26.320,Constellation,Especial,,600,
+27.260|Rodoviário,27.260,Constellation,Rodoviário,50000,,
+27.260|Misto,27.260,Constellation,Misto,40000,,
+27.260|Severo,27.260,Constellation,Severo,20000,,
+27.260|Especial,27.260,Constellation,Especial,,600,
+27.320|Rodoviário,27.320,Constellation,Rodoviário,50000,,
+27.320|Misto,27.320,Constellation,Misto,40000,,
+27.320|Severo,27.320,Constellation,Severo,20000,,
+27.320|Especial,27.320,Constellation,Especial,,600,
+28.480|Rodoviário,28.480,Meteor,Rodoviário,50000,,3000
+28.480|Misto,28.480,Meteor,Misto,40000,,3000
+28.480|Severo,28.480,Meteor,Severo,20000,,3000
+28.480|Especial,28.480,Meteor,Especial,,600,
+29.530|Rodoviário,29.530,Meteor,Rodoviário,50000,,3000
+29.530|Misto,29.530,Meteor,Misto,40000,,3000
+29.530|Severo,29.530,Meteor,Severo,20000,,3000
+29.530|Especial,29.530,Meteor,Especial,,600,
+30.320|Rodoviário,30.320,Constellation,Rodoviário,50000,,
+30.320|Misto,30.320,Constellation,Misto,40000,,
+30.320|Severo,30.320,Constellation,Severo,20000,,
+30.320|Especial,30.320,Constellation,Especial,,600,
+31.320|Rodoviário,31.320,Constellation,Rodoviário,50000,,
+31.320|Misto,31.320,Constellation,Misto,40000,,
+31.320|Severo,31.320,Constellation,Severo,20000,,
+31.320|Especial,31.320,Constellation,Especial,,600,
+32.380|Rodoviário,32.380,Constellation,Rodoviário,40000,,
+32.380|Misto,32.380,Constellation,Misto,30000,,
+32.380|Severo,32.380,Constellation,Severo,20000,,
+32.380|Especial,32.380,Constellation,Especial,,600,
+33.480|Rodoviário,33.480,Constellation,Rodoviário,50000,,3000
+33.480|Misto,33.480,Constellation,Misto,40000,,3000
+33.480|Severo,33.480,Constellation,Severo,20000,,3000
+33.480|Especial,33.480,Constellation,Especial,,600,
+Express|Rodoviário,Express,Delivery,Rodoviário,30000,,
+Express|Misto,Express,Delivery,Misto,20000,,
+Express|Severo,Express,Delivery,Severo,20000,,
+Express|Especial,Express,Delivery,Especial,,500,

@@ -1,0 +1,29 @@
+﻿Modelo,Familia,Severo Inicio,Severo Termino,Misto Inicio,Misto Termino,Rodoviário Inicio,Rodoviário Termino,Observação
+VW 14.210,CONSTELLATION,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 17.210,CONSTELLATION,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 18.260,CONSTELLATION,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 18.320,CONSTELLATION,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 26.260,CONSTELLATION,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 26.320,CONSTELLATION,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 27.260,CONSTELLATION,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 27.320,CONSTELLATION,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 30.320,CONSTELLATION,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 31.320,CONSTELLATION,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 32.380,CONSTELLATION,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 19.380,CONSTELLATION EXTRA-PESADOS,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 20.480,CONSTELLATION EXTRA-PESADOS,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 25.380,CONSTELLATION EXTRA-PESADOS,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 25.480,CONSTELLATION EXTRA-PESADOS,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 33.480,CONSTELLATION EXTRA-PESADOS,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 11.180,DELIVERY,0,3250,3500,6500,6750,em diante,Base contratos manutenção
+VW 11.180 4x4,DELIVERY,0,3250,3500,6500,6750,em diante,Base contratos manutenção
+VW 13.180,DELIVERY,0,3250,3500,6500,6750,em diante,Base contratos manutenção
+VW 14.180,DELIVERY,0,3250,3500,6500,6750,em diante,Base contratos manutenção
+VW 9.180,DELIVERY,0,3250,3500,6500,6750,em diante,Base contratos manutenção
+VW DELIVERY EXPRESS+,DELIVERY EXPRESS,0,3250,3500,6500,6750,em diante,Base contratos manutenção
+VW 28.480,METEOR TRACKTOR,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+VW 29.530,METEOR TRACKTOR,0,6500,6750,10000,10250,em diante,Base contratos manutenção
+Orientação de uso,,,,,,,,
+Esta base é referência de contratos de manutenção por quilometragem mensal.,,,,,,,,
+"Ela não substitui a avaliação técnica de aplicação, horas de motor, marcha lenta, fora de estrada, carga e severidade operacional.",,,,,,,,
+As lacunas entre faixas foram preservadas como faixa de transição para validação comercial/técnica.,,,,,,,,
