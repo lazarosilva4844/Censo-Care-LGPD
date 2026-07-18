@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import base64
 import io
 import math
 import os
@@ -26,6 +27,15 @@ ASSETS_DIR = Path(__file__).parent / "assets"
 VW_BLUE = "#001E50"
 VW_LIGHT_BLUE = "#00A3E0"
 VW_GRAY = "#F3F5F7"
+
+
+def asset_data_uri(filename: str) -> str:
+    """Retorna arquivo de imagem dos assets em base64 para uso no HTML do Streamlit."""
+    path = ASSETS_DIR / filename
+    if not path.exists():
+        return ""
+    mime = "image/png" if path.suffix.lower() == ".png" else "image/jpeg"
+    return f"data:{mime};base64," + base64.b64encode(path.read_bytes()).decode("utf-8")
 
 GROUP_ORDER = {
     "Rodoviário": 1,
@@ -1534,10 +1544,6 @@ def _get_auth_users() -> dict[str, str]:
     except Exception:
         users = {}
 
-    if not users:
-        # Fallback apenas para teste local.
-        # Em produção, configure os usuários no Streamlit Secrets.
-        users = {"admin": "alterar123"}
     return users
 
 
@@ -1559,21 +1565,24 @@ def tela_login() -> bool:
                 st.rerun()
         return True
 
+    logo_uri = asset_data_uri("futura_vwco_white.png")
+    logo_html = f'<img src="{logo_uri}" class="login-logo" />' if logo_uri else '<div class="login-logo-text">Futura / VWCO</div>'
+
     st.markdown(
-        """
-        <div style="background:#001E50;padding:26px 28px;border-radius:14px;margin-bottom:18px;">
-            <h2 style="color:white;margin:0;font-family:Arial, sans-serif;">Acesso restrito</h2>
-            <p style="color:white;margin:8px 0 0 0;font-family:Arial, sans-serif;">
-                Simulador de Classificação do Grupo de Manutenção — uso interno.
-            </p>
+        f"""
+        <div class="login-shell">
+            <div class="login-brand-card">
+                {logo_html}
+                <div class="login-title">Login</div>
+                <div class="login-subtitle">Acesso ao Simulador de Classificação de Grupo de Manutenção</div>
+            </div>
         </div>
         """,
         unsafe_allow_html=True,
     )
-    st.warning("Informe usuário e senha autorizados para acessar o simulador.")
 
     with st.form("login_form"):
-        usuario = st.text_input("Usuário")
+        usuario = st.text_input("E-mail ou usuário")
         senha = st.text_input("Senha", type="password")
         entrar = st.form_submit_button("Entrar", type="primary")
 
@@ -1586,12 +1595,9 @@ def tela_login() -> bool:
         else:
             st.error("Usuário ou senha inválidos.")
 
-    st.info(
-        "Para produção, cadastre os usuários em App settings > Secrets no Streamlit Cloud. "
-        "Não publique senhas no GitHub."
-    )
+    if not _get_auth_users():
+        st.error("Nenhum usuário autorizado foi encontrado. Configure [auth.users] no Streamlit Secrets.")
     return False
-
 
 
 # UI
@@ -1600,32 +1606,120 @@ st.set_page_config(page_title="Simulador Grupo de Manutenção", page_icon="🚚
 if not tela_login():
     st.stop()
 
-
 st.markdown(
-    f"""
+    """
     <style>
-    .main {{background-color: #ffffff;}}
-    .block-container {{padding-top: 1.2rem;}}
-    .futura-header {{
-        background: linear-gradient(90deg, {VW_BLUE}, #003B7A);
-        padding: 22px 28px;
-        border-radius: 14px;
-        color: white;
-        margin-bottom: 20px;
-    }}
-    .futura-header h1 {{margin: 0; font-size: 28px;}}
-    .futura-header p {{margin: 4px 0 0 0; opacity: .9;}}
-    .metric-card {{background:{VW_GRAY}; padding:16px; border-radius:12px; border-left:5px solid {VW_LIGHT_BLUE};}}
+        .block-container {
+            padding-top: 1.25rem;
+            padding-bottom: 2.5rem;
+            max-width: 1180px;
+        }
+        .main-header {
+            background: linear-gradient(90deg, #001E50 0%, #003B73 100%);
+            padding: 18px 22px;
+            border-radius: 14px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 6px 18px rgba(0, 30, 80, 0.14);
+        }
+        .main-header-logo {
+            width: 188px;
+            max-height: 64px;
+            object-fit: contain;
+        }
+        .main-header h1 {
+            color: #FFFFFF;
+            font-size: 1.95rem;
+            margin: 0;
+            line-height: 1.15;
+            font-weight: 700;
+        }
+        .login-shell {
+            display: flex;
+            justify-content: center;
+            margin-top: 3.5rem;
+            margin-bottom: 1.2rem;
+        }
+        .login-brand-card {
+            width: 460px;
+            background: #FFFFFF;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 30, 80, 0.16);
+            padding: 26px 32px 30px 32px;
+            border: 1px solid #E5E7EB;
+            text-align: center;
+        }
+        .login-logo {
+            max-width: 280px;
+            max-height: 86px;
+            background: #001E50;
+            border-radius: 12px;
+            padding: 14px 18px;
+            object-fit: contain;
+            margin-bottom: 18px;
+        }
+        .login-logo-text {
+            color: #001E50;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        .login-title {
+            background: #2F86C7;
+            color: #FFFFFF;
+            font-size: 1.65rem;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 14px;
+            margin: 0 auto 18px auto;
+        }
+        .login-subtitle {
+            color: #4B5563;
+            font-size: 0.92rem;
+            margin-bottom: 2px;
+        }
+        .stButton > button[kind="primary"],
+        .stFormSubmitButton > button[kind="primary"] {
+            background-color: #001E50;
+            border-color: #001E50;
+            color: #FFFFFF;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+        .stButton > button[kind="primary"]:hover,
+        .stFormSubmitButton > button[kind="primary"]:hover {
+            background-color: #003B73;
+            border-color: #003B73;
+            color: #FFFFFF;
+        }
+        .stButton > button {
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        [data-testid="stMetricValue"] {
+            font-size: 1.55rem;
+        }
+        div[data-testid="stExpander"] {
+            border-radius: 12px;
+        }
+        hr {
+            margin: 1.2rem 0;
+        }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
+
+logo_uri = asset_data_uri("futura_vwco_white.png")
+logo_html = f'<img src="{logo_uri}" class="main-header-logo" />' if logo_uri else '<div style="color:white;font-weight:700;">Futura / VWCO</div>'
 st.markdown(
-    """
-    <div class="futura-header">
-        <h1>Simulador de Enquadramento de Grupo de Manutenção</h1>
-        <p>Futura Caminhões | Volkswagen Caminhões e Ônibus — Protótipo v27</p>
+    f"""
+    <div class="main-header">
+        {logo_html}
+        <h1>Classificação de grupo de manutenção</h1>
     </div>
     """,
     unsafe_allow_html=True,
@@ -1650,7 +1744,6 @@ with st.sidebar:
     st.caption("As regras vêm dos arquivos CSV gerados a partir do simulador Excel.")
     show_rules = st.toggle("Exibir bases de regras", value=False)
 
-st.caption("Versão em execução: v27 — LGPD-safe com autenticação simples por usuário e senha.")
 
 st.subheader("1. Dados do cliente e veículo")
 
@@ -1705,14 +1798,12 @@ def resetar_simulador():
     for chave, valor in RESET_DEFAULTS.items():
         st.session_state[chave] = valor
 
-if st.button("Limpar todas as informações", type="secondary"):
-    resetar_simulador()
-    st.rerun()
+limpar_col1, limpar_col2 = st.columns([4, 1])
+with limpar_col2:
+    if st.button("Limpar dados", type="primary", use_container_width=True):
+        resetar_simulador()
+        st.rerun()
 
-st.info(
-    "Modo LGPD-safe: os dados de cliente e veículo são digitados manualmente. "
-    "Esta versão não consulta bases internas, CPFHub, CNPJ, placa ou chassi."
-)
 
 informar_cliente = st.radio(
     "Deseja informar os dados do cliente?",
@@ -1823,7 +1914,7 @@ else:
     km_mensal_estimado = 0
     faixa_velocidade_estimativa = ""
 
-st.subheader("3. Operação")
+st.subheader("3. Condições de operação")
 c1, c2 = st.columns(2)
 with c1:
     aplicacao = st.selectbox("Aplicação", ["Selecione aplicação"] + apps, key="aplicacao_select")
