@@ -1555,14 +1555,6 @@ def tela_login() -> bool:
         st.session_state["auth_user"] = ""
 
     if st.session_state.get("auth_ok"):
-        col_user, col_logout = st.columns([5, 1])
-        with col_user:
-            st.caption(f"Acesso autenticado: **{st.session_state.get('auth_user', '')}**")
-        with col_logout:
-            if st.button("Sair", type="secondary", use_container_width=True):
-                st.session_state["auth_ok"] = False
-                st.session_state["auth_user"] = ""
-                st.rerun()
         return True
 
     logo_uri = asset_data_uri("futura_vwco_blue.png")
@@ -1610,7 +1602,7 @@ if not st.session_state.get("auth_ok", False):
         <style>
             .stApp {{
                 background-image:
-                    linear-gradient(rgba(0, 30, 80, 0.32), rgba(0, 21, 52, 0.48)),
+                    linear-gradient(rgba(0, 30, 80, 0.20), rgba(0, 21, 52, 0.38)),
                     url('{bg_uri}');
                 background-size: cover;
                 background-position: center center;
@@ -1694,48 +1686,83 @@ if not tela_login():
 st.markdown(
     """
     <style>
-        .stApp { background: #F5F7FA; }
-        [data-testid="stHeader"] { background: rgba(245,247,250,0.92); }
+        .stApp { background: #F4F7FB; }
+        [data-testid="stHeader"] { background: rgba(244,247,251,0.94); }
+        [data-testid="stToolbar"], #MainMenu, footer { visibility: hidden; }
         .block-container {
-            padding-top: 1rem;
+            padding-top: 1.1rem;
             padding-bottom: 2.5rem;
-            max-width: 1280px;
+            max-width: 1420px;
         }
-        .main-header {
-            background: #FFFFFF;
-            border: 1px solid #E1E8F0;
-            padding: 18px 24px;
+
+        /* Navegação lateral corporativa */
+        section[data-testid="stSidebar"] {
+            background: linear-gradient(180deg, #001E50 0%, #003B73 100%);
+            border-right: 0;
+        }
+        section[data-testid="stSidebar"] > div { padding-top: 1.1rem; }
+        section[data-testid="stSidebar"] * { color: #FFFFFF; }
+        section[data-testid="stSidebar"] [data-testid="stRadio"] label {
+            background: transparent;
+            border-radius: 10px;
+            padding: 0.55rem 0.7rem;
+            margin-bottom: 0.18rem;
+        }
+        section[data-testid="stSidebar"] [data-testid="stRadio"] label:hover {
+            background: rgba(47,134,199,0.30);
+        }
+        section[data-testid="stSidebar"] button {
+            border-color: rgba(255,255,255,0.38);
+            color: #FFFFFF;
+            background: rgba(255,255,255,0.08);
+        }
+        section[data-testid="stSidebar"] button:hover {
+            background: rgba(255,255,255,0.16);
+            border-color: rgba(255,255,255,0.60);
+            color: #FFFFFF;
+        }
+        .sidebar-brand {
+            padding: 0.45rem 0.25rem 1.15rem 0.25rem;
+            border-bottom: 1px solid rgba(255,255,255,0.18);
+            margin-bottom: 0.8rem;
+        }
+        .sidebar-brand-title { font-size: 1.15rem; font-weight: 800; letter-spacing: .01em; }
+        .sidebar-brand-sub { font-size: .78rem; opacity: .72; margin-top: .2rem; }
+
+        /* Cabeçalho principal */
+        div[data-testid="stVerticalBlockBorderWrapper"] {
+            border-color: #DDE6F0;
             border-radius: 16px;
-            margin: 8px 0 22px 0;
-            display: flex;
-            align-items: center;
-            gap: 34px;
-            box-shadow: 0 8px 24px rgba(0, 30, 80, 0.08);
-            min-height: 102px;
+            box-shadow: 0 7px 22px rgba(0,30,80,.07);
+            background: #FFFFFF;
         }
-        .main-header-brand {
-            display: flex;
-            align-items: center;
-            min-width: 285px;
-        }
-        .main-header-logo {
-            width: 270px;
-            max-height: 78px;
-            object-fit: contain;
-            object-position: left center;
-        }
-        .main-header-title {
-            border-left: 3px solid #2F86C7;
-            padding-left: 30px;
-            flex: 1;
-        }
-        .main-header h1 {
+        .app-title {
             color: #001E50;
-            font-size: 2rem;
-            margin: 0;
+            font-size: 1.75rem;
+            font-weight: 800;
             line-height: 1.15;
-            font-weight: 750;
-            letter-spacing: -0.02em;
+            padding-top: .65rem;
+            letter-spacing: -.02em;
+        }
+        .user-chip {
+            display: flex;
+            align-items: center;
+            gap: .65rem;
+            padding-top: .28rem;
+        }
+        .user-avatar {
+            width: 42px; height: 42px; border-radius: 50%;
+            background: #001E50; color: #FFF;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800;
+        }
+        .user-name { color:#001E50; font-weight:750; font-size:.92rem; }
+        .user-role { color:#67758A; font-size:.75rem; margin-top:.08rem; }
+
+        /* Conteúdo e controles */
+        .section-heading {
+            color:#001E50; font-weight:800; font-size:1.15rem;
+            margin: .15rem 0 .65rem 0;
         }
         .stButton > button[kind="primary"],
         .stFormSubmitButton > button[kind="primary"] {
@@ -1751,7 +1778,7 @@ st.markdown(
             border-color: #2F86C7;
             color: #FFFFFF;
         }
-        .stButton > button { border-radius: 10px; font-weight: 600; }
+        .stButton > button { border-radius: 10px; font-weight: 650; }
         [data-testid="stMetricValue"] { font-size: 1.55rem; }
         div[data-testid="stExpander"] { border-radius: 12px; }
         hr { margin: 1.2rem 0; }
@@ -1760,17 +1787,23 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-logo_uri = asset_data_uri("futura_vwco_blue.png")
-logo_html = f'<img src="{logo_uri}" class="main-header-logo" />' if logo_uri else '<div style="color:#001E50;font-weight:700;">Futura / VWCO</div>'
-st.markdown(
-    f"""
-    <div class="main-header">
-        <div class="main-header-brand">{logo_html}</div>
-        <div class="main-header-title"><h1>Classificação de grupo de manutenção</h1></div>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+with st.sidebar:
+    st.markdown(
+        '<div class="sidebar-brand"><div class="sidebar-brand-title">Censo Care</div>'
+        '<div class="sidebar-brand-sub">Classificação de manutenção</div></div>',
+        unsafe_allow_html=True,
+    )
+    pagina = st.radio(
+        "Navegação",
+        ["Início", "Simulador", "Consultas", "Relatórios", "Cadastros"],
+        index=1,
+        label_visibility="collapsed",
+    )
+    st.divider()
+    if st.button("Sair", use_container_width=True):
+        st.session_state["auth_ok"] = False
+        st.session_state["auth_user"] = ""
+        st.rerun()
 
 data = load_data()
 base_modelos = data["base_modelos"]
@@ -1786,13 +1819,20 @@ modelos = sorted(base_modelos["Modelo"].dropna().astype(str).tolist())
 apps = sorted(aplicacoes["Aplicação"].dropna().astype(str).tolist())
 imps = sorted(implementos["Implemento"].dropna().astype(str).tolist())
 
-with st.sidebar:
-    st.header("Base de regras")
-    st.caption("As regras vêm dos arquivos CSV gerados a partir do simulador Excel.")
-    show_rules = st.toggle("Exibir bases de regras", value=False)
+show_rules = False
 
+# As demais áreas já aparecem na navegação, mas permanecem bloqueadas até a próxima etapa.
+if pagina != "Simulador":
+    titulo_paginas = {
+        "Início": "Visão geral",
+        "Consultas": "Consultas",
+        "Relatórios": "Relatórios",
+        "Cadastros": "Cadastros",
+    }
+    st.markdown(f"## {titulo_paginas[pagina]}")
+    st.info("Módulo preparado na navegação e reservado para evolução futura do sistema.")
+    st.stop()
 
-st.subheader("1. Dados do cliente e veículo")
 
 RESET_DEFAULTS = {
     # Cliente e veículo
@@ -1845,12 +1885,32 @@ def resetar_simulador():
     for chave, valor in RESET_DEFAULTS.items():
         st.session_state[chave] = valor
 
-limpar_col1, limpar_col2 = st.columns([4, 1])
-with limpar_col2:
-    if st.button("Limpar dados", type="primary", use_container_width=True):
-        resetar_simulador()
-        st.rerun()
+# Cabeçalho funcional após autenticação, conforme layout aprovado.
+with st.container(border=True):
+    h_logo, h_title, h_clear, h_user = st.columns([2.2, 4.8, 1.35, 1.65], vertical_alignment="center")
+    with h_logo:
+        logo_file = ASSETS_DIR / "futura_vwco_blue.png"
+        if logo_file.exists():
+            st.image(str(logo_file), width=255)
+        else:
+            st.markdown("**Futura Caminhões / VWCO**")
+    with h_title:
+        st.markdown('<div class="app-title">Classificação de Grupo de Manutenção</div>', unsafe_allow_html=True)
+    with h_clear:
+        if st.button("Limpar dados", type="secondary", use_container_width=True, key="header_clear"):
+            resetar_simulador()
+            st.rerun()
+    with h_user:
+        auth_user = st.session_state.get("auth_user", "Usuário")
+        initials = "".join([p[0].upper() for p in auth_user.replace("@", " ").replace(".", " ").split()[:2]]) or "US"
+        st.markdown(
+            f'<div class="user-chip"><div class="user-avatar">{initials}</div>'
+            f'<div><div class="user-name">{auth_user}</div>'
+            '<div class="user-role">Usuário autenticado</div></div></div>',
+            unsafe_allow_html=True,
+        )
 
+st.markdown('<div class="section-heading">Dados do Cliente e Veículo</div>', unsafe_allow_html=True)
 
 informar_cliente = st.radio(
     "Deseja informar os dados do cliente?",

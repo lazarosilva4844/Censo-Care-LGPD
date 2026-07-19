@@ -1,8 +1,8 @@
-# Protótipo Simulador de Enquadramento de Grupo de Manutenção — v31
+# Protótipo Simulador de Enquadramento de Grupo de Manutenção — v33
 
-Versão funcional com atualização visual da tela de login e do cabeçalho após autenticação.
+Versão funcional com a fotografia real do Meteor enviada pelo usuário aplicada ao fundo do login, com tratamento azulado, mantendo o cabeçalho aprovado e as funcionalidades existentes.
 
-## Atualizações v31
+## Atualizações v33
 
 - Tela de login:
   - utiliza a fotografia real enviada pelo usuário;
@@ -56,3 +56,10 @@ README.md
 app.py
 requirements.txt
 ```
+
+
+## Atualização visual v33
+- Navegação lateral azul com Início, Simulador, Consultas, Relatórios, Cadastros e Sair.
+- Cabeçalho funcional com logo original, título, Limpar dados e identificação do usuário.
+- Login com fotografia real enviada pelo usuário e tratamento azulado.
+- Regras e funcionalidades do simulador preservadas.
