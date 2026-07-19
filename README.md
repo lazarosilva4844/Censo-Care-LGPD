@@ -1,30 +1,28 @@
-# Protótipo Simulador de Enquadramento de Grupo de Manutenção — v29
+# Protótipo Simulador de Enquadramento de Grupo de Manutenção — v31
 
-Versão com layout ajustado conforme orientação do arquivo "Prompts - Layout.docx".
+Versão funcional com atualização visual da tela de login e do cabeçalho após autenticação.
 
-## Atualizações v29
+## Atualizações v31
 
-- Login no padrão solicitado:
-  - logotipo Futura / VWCO;
-  - título "Login";
-  - campos de acesso;
-  - removida nota "Para produção...".
-- Página inicial ajustada:
-  - incluída logotipo Futura / VWCO;
-  - título alterado para "Classificação de grupo de manutenção";
-  - removido subtítulo;
-  - removidas informações visíveis de versão e LGPD da área principal.
-- Botão de limpeza ajustado:
-  - texto alterado para "Limpar dados";
-  - posicionado no canto superior direito;
-  - estilo azul.
-- Mantido:
-  - autenticação por Streamlit Secrets;
-  - bloqueio sem usuários configurados;
-  - modo LGPD-safe;
-  - entrada manual dos dados;
-  - layout do PDF sem alterações;
-  - Grupo Especial com controle por horas.
+- Tela de login:
+  - utiliza a fotografia real enviada pelo usuário;
+  - aplicação de tratamento azulado sobre a imagem original;
+  - card centralizado e mais minimalista;
+  - logo original Futura Caminhões / VWCO preservada, sem barra entre as marcas;
+  - removido o subtítulo do login;
+  - botão **Entrar** mantido.
+- Área autenticada:
+  - cabeçalho branco corporativo;
+  - logo e título organizados em áreas distintas;
+  - detalhes em azul-claro, sem uso de amarelo;
+  - melhor alinhamento e espaçamento visual.
+- Mantido sem alterações:
+  - regras de classificação;
+  - autenticação via Streamlit Secrets;
+  - entrada manual de dados;
+  - geração do PDF;
+  - regras do Grupo Especial por horas;
+  - bases CSV e funcionalidades da versão anterior.
 
 ## Configuração de usuários no Streamlit Cloud
 
@@ -32,6 +30,21 @@ Versão com layout ajustado conforme orientação do arquivo "Prompts - Layout.d
 [auth.users]
 "lazaro@futuracaminhoes.com.br" = "troque-por-uma-senha-forte"
 "consultor@futuracaminhoes.com.br" = "outra-senha-forte"
+```
+
+## Execução local
+
+1. Instale as dependências:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Crie `.streamlit/secrets.toml` com os usuários autorizados.
+3. Execute:
+
+```bash
+streamlit run app.py
 ```
 
 ## Estrutura esperada no GitHub
@@ -43,13 +56,3 @@ README.md
 app.py
 requirements.txt
 ```
-
-## Bases mantidas
-
-A versão mantém apenas bases técnicas:
-
-- `base_modelos.csv`
-- `aplicacoes.csv`
-- `implementos.csv`
-- `intervalos.csv`
-- `plano_contratos.csv`

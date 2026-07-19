@@ -1555,36 +1555,34 @@ def tela_login() -> bool:
         st.session_state["auth_user"] = ""
 
     if st.session_state.get("auth_ok"):
-        col_user, col_logout = st.columns([4, 1])
+        col_user, col_logout = st.columns([5, 1])
         with col_user:
             st.caption(f"Acesso autenticado: **{st.session_state.get('auth_user', '')}**")
         with col_logout:
-            if st.button("Sair", type="secondary"):
+            if st.button("Sair", type="secondary", use_container_width=True):
                 st.session_state["auth_ok"] = False
                 st.session_state["auth_user"] = ""
                 st.rerun()
         return True
 
-    logo_uri = asset_data_uri("futura_vwco_white.png")
+    logo_uri = asset_data_uri("futura_vwco_blue.png")
     logo_html = f'<img src="{logo_uri}" class="login-logo" />' if logo_uri else '<div class="login-logo-text">Futura / VWCO</div>'
 
     st.markdown(
         f"""
-        <div class="login-shell">
-            <div class="login-brand-card">
-                {logo_html}
-                <div class="login-title">Login</div>
-                <div class="login-subtitle">Acesso ao Simulador de Classificação de Grupo de Manutenção</div>
-            </div>
+        <div class="login-brand">
+            {logo_html}
+            <div class="login-title">Login</div>
+            <div class="login-accent"></div>
         </div>
         """,
         unsafe_allow_html=True,
     )
 
     with st.form("login_form"):
-        usuario = st.text_input("E-mail ou usuário")
-        senha = st.text_input("Senha", type="password")
-        entrar = st.form_submit_button("Entrar", type="primary")
+        usuario = st.text_input("Usuário ou e-mail", placeholder="Digite seu usuário ou e-mail")
+        senha = st.text_input("Senha", type="password", placeholder="Digite sua senha")
+        entrar = st.form_submit_button("Entrar", type="primary", use_container_width=True)
 
     if entrar:
         users = _get_auth_users()
@@ -1603,82 +1601,141 @@ def tela_login() -> bool:
 # UI
 st.set_page_config(page_title="Simulador Grupo de Manutenção", page_icon="🚚", layout="wide")
 
+# O CSS da tela de login é carregado antes da autenticação para garantir o fundo real
+# enviado pelo usuário, com tratamento azulado, e o card centralizado.
+if not st.session_state.get("auth_ok", False):
+    bg_uri = asset_data_uri("login_background_real_blue.jpg")
+    st.markdown(
+        f"""
+        <style>
+            .stApp {{
+                background-image:
+                    linear-gradient(rgba(0, 30, 80, 0.32), rgba(0, 21, 52, 0.48)),
+                    url('{bg_uri}');
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }}
+            [data-testid="stHeader"] {{ background: transparent; }}
+            [data-testid="stToolbar"], #MainMenu, footer {{ visibility: hidden; }}
+            .block-container {{
+                padding-top: 4.2rem;
+                padding-bottom: 3rem;
+                max-width: 560px;
+            }}
+            .login-brand {{
+                width: 100%;
+                background: rgba(255,255,255,0.98);
+                border: 1px solid rgba(255,255,255,0.75);
+                border-radius: 22px 22px 0 0;
+                box-shadow: 0 22px 55px rgba(0, 20, 55, 0.28);
+                padding: 34px 46px 20px 46px;
+                text-align: center;
+                box-sizing: border-box;
+            }}
+            .login-logo {{
+                width: min(100%, 340px);
+                max-height: 96px;
+                object-fit: contain;
+                margin: 0 auto 24px auto;
+            }}
+            .login-logo-text {{ color: #001E50; font-size: 1.4rem; font-weight: 700; }}
+            .login-title {{
+                color: #001E50;
+                font-size: 2.25rem;
+                font-weight: 750;
+                line-height: 1.1;
+                margin: 0;
+            }}
+            .login-accent {{
+                width: 44px;
+                height: 4px;
+                background: #2F86C7;
+                border-radius: 99px;
+                margin: 15px auto 0 auto;
+            }}
+            div[data-testid="stForm"] {{
+                background: rgba(255,255,255,0.98);
+                border: 1px solid rgba(255,255,255,0.75);
+                border-top: 0;
+                border-radius: 0 0 22px 22px;
+                box-shadow: 0 22px 55px rgba(0, 20, 55, 0.28);
+                padding: 8px 46px 38px 46px;
+            }}
+            div[data-testid="stForm"] label {{ color: #23324A; font-weight: 650; }}
+            div[data-testid="stForm"] input {{
+                background: #FFFFFF;
+                border-radius: 10px;
+            }}
+            .stFormSubmitButton > button[kind="primary"] {{
+                min-height: 3.15rem;
+                background: linear-gradient(90deg, #001E50 0%, #073E82 100%);
+                border: 0;
+                border-radius: 10px;
+                color: #FFFFFF;
+                font-size: 1.02rem;
+                font-weight: 750;
+                box-shadow: 0 8px 18px rgba(0,30,80,0.20);
+            }}
+            .stFormSubmitButton > button[kind="primary"]:hover {{
+                background: linear-gradient(90deg, #073E82 0%, #2F86C7 100%);
+                color: #FFFFFF;
+            }}
+            div[data-testid="stAlert"] {{ border-radius: 10px; }}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
 if not tela_login():
     st.stop()
 
 st.markdown(
     """
     <style>
+        .stApp { background: #F5F7FA; }
+        [data-testid="stHeader"] { background: rgba(245,247,250,0.92); }
         .block-container {
-            padding-top: 1.25rem;
+            padding-top: 1rem;
             padding-bottom: 2.5rem;
-            max-width: 1180px;
+            max-width: 1280px;
         }
         .main-header {
-            background: linear-gradient(90deg, #001E50 0%, #003B73 100%);
-            padding: 18px 22px;
-            border-radius: 14px;
-            margin-bottom: 18px;
+            background: #FFFFFF;
+            border: 1px solid #E1E8F0;
+            padding: 18px 24px;
+            border-radius: 16px;
+            margin: 8px 0 22px 0;
             display: flex;
             align-items: center;
-            gap: 20px;
-            box-shadow: 0 6px 18px rgba(0, 30, 80, 0.14);
+            gap: 34px;
+            box-shadow: 0 8px 24px rgba(0, 30, 80, 0.08);
+            min-height: 102px;
+        }
+        .main-header-brand {
+            display: flex;
+            align-items: center;
+            min-width: 285px;
         }
         .main-header-logo {
-            width: 188px;
-            max-height: 64px;
+            width: 270px;
+            max-height: 78px;
             object-fit: contain;
+            object-position: left center;
+        }
+        .main-header-title {
+            border-left: 3px solid #2F86C7;
+            padding-left: 30px;
+            flex: 1;
         }
         .main-header h1 {
-            color: #FFFFFF;
-            font-size: 1.95rem;
+            color: #001E50;
+            font-size: 2rem;
             margin: 0;
             line-height: 1.15;
-            font-weight: 700;
-        }
-        .login-shell {
-            display: flex;
-            justify-content: center;
-            margin-top: 3.5rem;
-            margin-bottom: 1.2rem;
-        }
-        .login-brand-card {
-            width: 460px;
-            background: #FFFFFF;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0, 30, 80, 0.16);
-            padding: 26px 32px 30px 32px;
-            border: 1px solid #E5E7EB;
-            text-align: center;
-        }
-        .login-logo {
-            max-width: 280px;
-            max-height: 86px;
-            background: #001E50;
-            border-radius: 12px;
-            padding: 14px 18px;
-            object-fit: contain;
-            margin-bottom: 18px;
-        }
-        .login-logo-text {
-            color: #001E50;
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-        .login-title {
-            background: #2F86C7;
-            color: #FFFFFF;
-            font-size: 1.65rem;
-            font-weight: 700;
-            border-radius: 8px;
-            padding: 14px;
-            margin: 0 auto 18px auto;
-        }
-        .login-subtitle {
-            color: #4B5563;
-            font-size: 0.92rem;
-            margin-bottom: 2px;
+            font-weight: 750;
+            letter-spacing: -0.02em;
         }
         .stButton > button[kind="primary"],
         .stFormSubmitButton > button[kind="primary"] {
@@ -1690,36 +1747,26 @@ st.markdown(
         }
         .stButton > button[kind="primary"]:hover,
         .stFormSubmitButton > button[kind="primary"]:hover {
-            background-color: #003B73;
-            border-color: #003B73;
+            background-color: #2F86C7;
+            border-color: #2F86C7;
             color: #FFFFFF;
         }
-        .stButton > button {
-            border-radius: 10px;
-            font-weight: 600;
-        }
-        [data-testid="stMetricValue"] {
-            font-size: 1.55rem;
-        }
-        div[data-testid="stExpander"] {
-            border-radius: 12px;
-        }
-        hr {
-            margin: 1.2rem 0;
-        }
+        .stButton > button { border-radius: 10px; font-weight: 600; }
+        [data-testid="stMetricValue"] { font-size: 1.55rem; }
+        div[data-testid="stExpander"] { border-radius: 12px; }
+        hr { margin: 1.2rem 0; }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
-
-logo_uri = asset_data_uri("futura_vwco_white.png")
-logo_html = f'<img src="{logo_uri}" class="main-header-logo" />' if logo_uri else '<div style="color:white;font-weight:700;">Futura / VWCO</div>'
+logo_uri = asset_data_uri("futura_vwco_blue.png")
+logo_html = f'<img src="{logo_uri}" class="main-header-logo" />' if logo_uri else '<div style="color:#001E50;font-weight:700;">Futura / VWCO</div>'
 st.markdown(
     f"""
     <div class="main-header">
-        {logo_html}
-        <h1>Classificação de grupo de manutenção</h1>
+        <div class="main-header-brand">{logo_html}</div>
+        <div class="main-header-title"><h1>Classificação de grupo de manutenção</h1></div>
     </div>
     """,
     unsafe_allow_html=True,
